@@ -8,6 +8,7 @@ import spark.servlet.SparkApplication;
 public class ChuckWeb implements SparkApplication {
 
     public static void main(String[] args) {
+        get("/hello", (req, res) -> "Hello World");
         staticFileLocation("/public");
         SparkApplication chuckweb = new ChuckWeb();
 
