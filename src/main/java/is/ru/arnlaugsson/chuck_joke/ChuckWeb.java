@@ -10,5 +10,5 @@ public class ChuckWeb implements SparkApplication {
     public static void main(String[] args) {
 
         get("/hello", (req, res) -> "Hello World");
-
+    }
 }
