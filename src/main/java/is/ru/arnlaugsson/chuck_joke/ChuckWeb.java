@@ -17,12 +17,14 @@ public class ChuckWeb implements SparkApplication {
             port(Integer.valueOf(port));
         }
 
+        get("/hello", (req, res) -> "Hello World");
+
         chuckweb.init();
     }
 
     @Override
     public void init() {
-        get("/hello", (req, res) -> "Hello World");
+        
         final Chuck chuck = new Chuck();    
         post("/random", (req, res) -> chuck.random());
         post("/id", (req, res) -> chuck.getById(req.queryParams("id")));
