@@ -8,7 +8,7 @@ import spark.servlet.SparkApplication;
 public class ChuckWeb implements SparkApplication {
 
     public static void main(String[] args) {
-        get("/hello", (req, res) -> "Hello World");
+
         staticFileLocation("/public");
         SparkApplication chuckweb = new ChuckWeb();
 
@@ -22,6 +22,7 @@ public class ChuckWeb implements SparkApplication {
 
     @Override
     public void init() {
+        get("/hello", (req, res) -> "Hello World");
         final Chuck chuck = new Chuck();    
         post("/random", (req, res) -> chuck.random());
         post("/id", (req, res) -> chuck.getById(req.queryParams("id")));
