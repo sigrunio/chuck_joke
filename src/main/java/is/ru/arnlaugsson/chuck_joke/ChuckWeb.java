@@ -17,7 +17,7 @@ public class ChuckWeb implements SparkApplication {
             port(Integer.valueOf(port));
         }
 
-        get("/hello", (req, res) -> "Hello World");
+        post("/hello", (req, res) -> "Hello World");
 
         chuckweb.init();
     }
